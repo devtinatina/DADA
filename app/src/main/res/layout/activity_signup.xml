@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.SignupActivity">
+
+    <TextView
+        android:id="@+id/SignUpTextView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Sign up"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/SignUpEmailInput"
+        android:hint="email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignUpTextView"/>
+
+    <EditText
+        android:id="@+id/SignUpPwInput"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignUpEmailInput" />
+
+    <EditText
+        android:id="@+id/SignUpPwCheckInput"
+        android:hint="password check"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignUpPwInput" />
+
+    <Button
+        android:id="@+id/SignUpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Sign up"
+        app:layout_constraintTop_toBottomOf="@+id/SignUpPwCheckInput"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

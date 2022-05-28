@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "326447860008",
+    "project_id": "dada-90308",
+    "storage_bucket": "dada-90308.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326447860008:android:7a7bc05df91e883052681d",
+        "android_client_info": {
+          "package_name": "com.example.dada"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326447860008-rfgmaa5elndpbp9o22db2m5i81lkgubc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZSE8XixM6fZptRdoXf9M6g719XzgsCBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326447860008-rfgmaa5elndpbp9o22db2m5i81lkgubc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

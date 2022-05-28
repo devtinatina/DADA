@@ -34,6 +34,10 @@ class HomeFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homeFragment_to_postFragment2)
         }
 
+        binding.profileTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+        }
+
         return binding.root
     }
 }

@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.dada.R
 import com.example.dada.databinding.FragmentPostBinding
@@ -29,6 +28,10 @@ class PostFragment : Fragment() {
 
         binding.homeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_postFragment_to_homeFragment)
+        }
+
+        binding.profileTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_postFragment_to_profileFragment)
         }
 
         return binding.root

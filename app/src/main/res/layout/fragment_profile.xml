@@ -11,14 +11,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <GridView
+            android:id="@+id/boardListView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            android:numColumns="3"/>
+
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#afafaf"
             android:layout_marginBottom="10dp"
+            android:background="#afafaf"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -50,14 +59,18 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
+
+        <ImageView
+            android:id="@+id/writeBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="250dp"
-            android:text="ProfileTap"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/ic_free_icon_font_document_3914193"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toEndOf="@+id/logoutBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.017" />
 
         <Button
             android:id="@+id/logoutBtn"
@@ -67,8 +80,10 @@
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.005" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

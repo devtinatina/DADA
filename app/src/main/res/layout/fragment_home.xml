@@ -11,44 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#afafaf"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:id="@+id/homeTap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_free_icon_font_home_3917032" />
-
-            <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:id="@+id/postTap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_free_icon_font_search_3917132" />
-            <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:id="@+id/profile_tap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_free_icon_font_user_3917688" />
-
-
-        </LinearLayout>
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

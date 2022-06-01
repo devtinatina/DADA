@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.navigation.findNavController
-import com.example.dada.R
 import com.example.dada.auth.IntroActivity
 import com.example.dada.board.BoardInsideActivity
 import com.example.dada.board.BoardListLVAdapter
@@ -23,7 +21,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
 
 class ProfileFragment : Fragment() {
 
@@ -65,14 +62,6 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
 
-        binding.homeTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_profileFragment_to_homeFragment)
-        }
-
-        binding.postTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_profileFragment_to_postFragment)
-        }
-
         binding.logoutBtn.setOnClickListener {
             auth.signOut()
 
@@ -100,19 +89,21 @@ class ProfileFragment : Fragment() {
                 boardDataList.clear()
 
                 for (dataModel in dataSnapshot.children) {
-                    Log.d(TAG, dataModel.toString())
                     dataModel.key
 
                     val item = dataModel.getValue(BoardModel::class.java)
-                    boardDataList.add(item!!)
-                    boardKeyList.add(dataModel.key.toString())
+                    if(item!!.uid == auth.currentUser?.uid.toString())
+                    {
+                        boardDataList.add(item!!)
+                        boardKeyList.add(dataModel.key.toString())
+                    }
+
 
                 }
                 boardKeyList.reverse()
                 boardDataList.reverse()
                 boardRVAdapter.notifyDataSetChanged()
 
-                Log.d(TAG, boardDataList.toString())
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

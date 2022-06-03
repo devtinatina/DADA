@@ -44,6 +44,53 @@ class BoardWriteActivity : AppCompatActivity() {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, 100)
         }
+        
+        binding.getImageFromCamera.setOnClickListener{
+            if(checkPermission()){
+                dispatchTakePictureIntent()
+            }
+            else{
+                requestPermission()
+                dispatchTakePictureIntent()
+            }
+        }
+    }
+    
+    private fun requestPermission(){
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,CAMERA),1)
+
+    }
+    private fun checkPermission():Boolean{
+
+        return (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this,
+            Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+
+    }
+    @Override
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if( requestCode == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            Toast.makeText(this, "권한 설정 OK", Toast.LENGTH_SHORT).show()
+        }
+        else
+        {
+            Toast.makeText(this, "권한 허용 안됨", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private val REQUEST_IMAGE_CAPTURE = 2
+    private fun dispatchTakePictureIntent() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+            takePictureIntent.resolveActivity(packageManager)?.also {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+            }
+        }
     }
 
     private fun imageUpload(key : String){
@@ -76,6 +123,11 @@ class BoardWriteActivity : AppCompatActivity() {
         if(resultCode == RESULT_OK && requestCode == 100) {
             binding.getImageFromAlbumBtn.setImageURI(data?.data)
             binding.getImageFromCamera.setImageResource(0)
+        }
+        
+        else if(resultCode == RESULT_OK && requestCode == REQUEST_IMAGE_CAPTURE){
+            val imageBitmap:Bitmap? = data?.extras?.get("data") as Bitmap
+            binding.DisplayImage.setImageBitmap(imageBitmap)
         }
     }
 

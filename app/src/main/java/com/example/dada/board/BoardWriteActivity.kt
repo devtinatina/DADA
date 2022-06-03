@@ -109,7 +109,7 @@ class BoardWriteActivity : AppCompatActivity() {
         val storageRef = storage.reference
         val mountainsRef = storageRef.child(key)
 
-        val imageView = binding.getImageFromAlbumBtn
+        val imageView = binding.DisplayImage
         imageView.isDrawingCacheEnabled = true
         imageView.buildDrawingCache()
         val bitmap = (imageView.drawable as BitmapDrawable).bitmap
@@ -131,8 +131,9 @@ class BoardWriteActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(resultCode == RESULT_OK && requestCode == 100) {
-            binding.getImageFromAlbumBtn.setImageURI(data?.data)
-            binding.getImageFromCamera.setImageResource(0)
+            binding.DisplayImage.setImageURI(data?.data)
+            binding.getImageFromCamera.setImageResource(0)  // 버튼 숨기기
+            binding.getImageFromAlbumBtn.setImageResource(0) // 버튼 숨기기
 
         }
 

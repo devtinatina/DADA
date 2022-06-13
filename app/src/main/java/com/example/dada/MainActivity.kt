@@ -7,6 +7,8 @@ import com.example.dada.databinding.ActivityMainBinding
 import com.example.dada.fragments.HomeFragment
 import com.example.dada.fragments.PostFragment
 import com.example.dada.fragments.ProfileFragment
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 
 class MainActivity : AppCompatActivity() {

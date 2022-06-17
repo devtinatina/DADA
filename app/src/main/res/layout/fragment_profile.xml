@@ -15,22 +15,23 @@
             android:id="@+id/boardListView"
             android:layout_width="match_parent"
             android:layout_height="500dp"
-            android:numColumns="3"
             android:layout_marginBottom="80dp"
+            android:numColumns="3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
+        <Button
             android:id="@+id/writeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_free_icon_font_document_3914193"
+            android:text="write"
+            app:layout_constraintBottom_toTopOf="@+id/boardListView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintHorizontal_bias="0.095"
             app:layout_constraintStart_toEndOf="@+id/logoutBtn"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.017" />
+            app:layout_constraintVertical_bias="0.728" />
 
         <Button
             android:id="@+id/logoutBtn"
@@ -38,12 +39,12 @@
             android:layout_height="wrap_content"
             android:text="log out"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/boardListView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.051"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.005" />
+            app:layout_constraintVertical_bias="0.728" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

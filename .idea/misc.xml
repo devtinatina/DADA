@@ -6,15 +6,17 @@
         <entry key="..\:/Users/alice/.gradle/caches/transforms-3/8c5d663833c1dbce0d868ef0df857d15/transformed/facebook-share-4.42.0/res/drawable/com_facebook_button_send_background.xml" value="0.1585" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable-v24/free-icon-font-home-3917014_24.xml" value="0.305" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable-v24/free-icon-font-user-3917559_24.xml" value="0.305" />
+        <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/custom_dialog.xml" value="0.2445" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/ic_free_icon_font_add_3914248.xml" value="0.195" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/ic_free_icon_font_comment_alt_3916599.xml" value="0.195" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/ic_free_icon_font_home_3917033.xml" value="0.195" />
+        <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/ic_free_icon_font_menu_burger_3917215.xml" value="0.2445" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/ic_free_icon_font_search_3917754.xml" value="0.195" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/ic_free_icon_font_user_3917559.xml" value="0.195" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/ic_free_icon_font_user_3917688.xml" value="0.328" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/ic_free_icon_font_user_3917711.xml" value="0.328" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.305" />
-        <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/activity_board_inside.xml" value="0.1" />
+        <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/activity_board_inside.xml" value="0.25" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/activity_board_write.xml" value="0.25" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/activity_facebook_login.xml" value="0.19067028985507245" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/activity_intro.xml" value="0.17346014492753623" />
@@ -23,6 +25,7 @@
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/activity_splash.xml" value="0.17346014492753623" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/board_list_item.xml" value="0.25885416666666666" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/content_setting.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/custom_dialog.xml" value="0.20081595648232095" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/fragment_first.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/alice/StudioProjects/DADA/app/src/main/res/layout/fragment_post.xml" value="0.25" />

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="145dp"
-    android:layout_height="145dp"
+    android:layout_width="140dp"
+    android:layout_height="140dp"
     android:orientation="horizontal"
     android:background="@color/black">
 
     <ImageView
         android:id="@+id/boardListImageArea"
-        android:layout_width="145dp"
-        android:layout_height="145dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="centerCrop"/>
 
 

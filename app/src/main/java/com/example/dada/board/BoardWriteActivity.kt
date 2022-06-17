@@ -44,7 +44,6 @@ class BoardWriteActivity : AppCompatActivity() {
                 .setValue(BoardModel(content, uid, time, key))
 
             imageUpload(key)
-
             finish()
         }
 
@@ -142,5 +141,6 @@ class BoardWriteActivity : AppCompatActivity() {
             binding.DisplayImage.setImageBitmap(imageBitmap)
         }
     }
+
 
 }

@@ -48,5 +48,14 @@
         android:layout_marginLeft="10dp"
         app:layout_constraintTop_toBottomOf="@+id/insideBoardDatetime" />
 
+    <ImageView
+        android:id="@+id/boardSettingIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_free_icon_font_menu_burger_3917215"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

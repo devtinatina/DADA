@@ -81,6 +81,7 @@ class IntroActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if(task.isSuccessful) {
                     val intent = Intent(this, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
 
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_LONG).show()

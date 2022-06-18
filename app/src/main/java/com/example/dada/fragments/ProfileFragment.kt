@@ -54,6 +54,9 @@ class ProfileFragment : Fragment() {
 
         boardRVAdapter = BoardListLVAdapter(boardDataList)
         binding.boardListView.adapter = boardRVAdapter
+        
+        
+        binding.emailText.setText(auth.currentUser?.email)
 
         binding.boardListView.setOnItemClickListener { parent, view, position, id ->
 

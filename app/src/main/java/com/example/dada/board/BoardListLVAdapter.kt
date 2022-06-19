@@ -25,6 +25,10 @@ class BoardListLVAdapter(val boardList : MutableList<BoardModel>) : BaseAdapter(
         return position.toLong()
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view = convertView
         val storageReference = Firebase.storage.reference.child(boardList[position].key)
@@ -44,8 +48,6 @@ class BoardListLVAdapter(val boardList : MutableList<BoardModel>) : BaseAdapter(
                 }
             }
         })
-
-        notifyDataSetChanged()
 
         return view!!
 

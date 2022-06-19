@@ -10,5 +10,7 @@ class FBRef {
 
 
         val boardRef = database.getReference("board")
+
+        val instaRef = database.getReference("instagram")
     }
 }

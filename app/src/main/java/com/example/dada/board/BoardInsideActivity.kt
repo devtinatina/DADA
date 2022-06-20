@@ -1,16 +1,20 @@
 package com.example.dada.board
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
-import androidx.core.view.LayoutInflaterCompat
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.dada.R
 import com.example.dada.databinding.ActivityBoardInsideBinding
+import com.example.dada.fragments.ProfileFragment
 import com.example.dada.utils.FBAuth
 import com.example.dada.utils.FBRef
 import com.google.android.gms.tasks.OnCompleteListener
@@ -20,6 +24,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 
+
 class BoardInsideActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityBoardInsideBinding
@@ -27,6 +32,8 @@ class BoardInsideActivity : AppCompatActivity() {
     private val TAG = BoardInsideActivity::class.java.simpleName
 
     private lateinit var key: String
+
+    private lateinit var imgPath : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +43,20 @@ class BoardInsideActivity : AppCompatActivity() {
 
         binding.boardSettingIcon.setOnClickListener {
             showDialog()
+        }
+
+        binding.shareBtn.setOnClickListener {
+            try {
+                val intent = Intent(Intent.ACTION_SEND)
+                val uri: Uri = Uri.parse(imgPath)
+
+                intent.type = ("image/*")
+                intent.putExtra(Intent.EXTRA_STREAM, uri)
+                startActivity(Intent.createChooser(intent, "Share img"))
+
+            } catch (ignored: ActivityNotFoundException) {
+                Log.d("test", "ignored : $ignored")
+            }
         }
 
         key = intent.getStringExtra("key").toString()
@@ -94,6 +115,7 @@ class BoardInsideActivity : AppCompatActivity() {
         // ImageView in your Activity
         val imageViewFromFB = binding.insideBoardImage
 
+        val ONE_MEGABYTE: Long = 1024 * 1024
         // Download directly from StorageReference using Glide
         // (See MyAppGlideModule for Loader registration)
         storageReference.downloadUrl.addOnCompleteListener(OnCompleteListener { task ->
@@ -104,7 +126,8 @@ class BoardInsideActivity : AppCompatActivity() {
             } else {
 
             }
-        })
 
+        })
+        imgPath = storageReference.path
     }
 }

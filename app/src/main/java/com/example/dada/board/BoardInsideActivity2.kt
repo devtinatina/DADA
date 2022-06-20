@@ -35,6 +35,7 @@ class BoardInsideActivity2 : AppCompatActivity() {
                 binding.insideBoardDatetime.text = dataModel!!.date
                 binding.insideBoardContent.text = dataModel!!.post
                 binding.insideBoardlikeArea.text = "좋아요 " + dataModel!!.like.toString()
+                binding.insideBoardCategoryArea.text = dataModel!!.cate
                 Glide.with(this@BoardInsideActivity2)
                     .load(dataModel.imgUrl)
                     .into(binding.insideBoardImage)

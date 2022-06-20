@@ -55,6 +55,8 @@ class ProfileFragment : Fragment() {
         boardRVAdapter = BoardListLVAdapter(boardDataList)
         binding.boardListView.adapter = boardRVAdapter
 
+        getFBBoardData()
+
         binding.boardListView.setOnItemClickListener { parent, view, position, id ->
 
             val intent = Intent(context, BoardInsideActivity::class.java)
@@ -76,12 +78,10 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
 
-        getFBBoardData()
-
         return binding.root
     }
 
-    private fun getFBBoardData() {
+    fun getFBBoardData() {
 
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -103,7 +103,6 @@ class ProfileFragment : Fragment() {
                 boardKeyList.reverse()
                 boardDataList.reverse()
                 boardRVAdapter.notifyDataSetChanged()
-
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

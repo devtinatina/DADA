@@ -19,11 +19,14 @@ import com.example.dada.utils.FBAuth
 import com.example.dada.utils.FBRef
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import com.google.firebase.storage.ktx.storageMetadata
 import java.io.ByteArrayOutputStream
 
 class BoardWriteActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityBoardWriteBinding
+
+    private lateinit var imgUrl : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +42,12 @@ class BoardWriteActivity : AppCompatActivity() {
 
             val key = FBRef.boardRef.push().key.toString()
 
+            imageUpload(key)
+
             FBRef.boardRef
                 .child(key)
-                .setValue(BoardModel(content, uid, time, key))
+                .setValue(BoardModel(content, uid, time, key, imgUrl))
 
-            imageUpload(key)
             finish()
         }
 
@@ -123,6 +127,9 @@ class BoardWriteActivity : AppCompatActivity() {
             // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
             // ...
         }
+
+        imgUrl = mountainsRef.downloadUrl.toString()
+
     }
 
 

@@ -52,7 +52,7 @@ class BoardInsideActivity : AppCompatActivity() {
 
                 intent.type = ("image/*")
                 intent.putExtra(Intent.EXTRA_STREAM, uri)
-                startActivity(Intent.createChooser(intent, "Share img"))
+                startActivity(Intent.createChooser(intent, "이미지 공유"))
 
             } catch (ignored: ActivityNotFoundException) {
                 Log.d("test", "ignored : $ignored")
@@ -93,6 +93,8 @@ class BoardInsideActivity : AppCompatActivity() {
                 val myUid = FBAuth.getUid()
                 val writerUid = dataModel.uid
 
+                imgPath = dataModel!!.imgUrl
+
                 if(myUid.equals(writerUid)){
                     binding.boardSettingIcon.isVisible = true
                 } else {
@@ -128,6 +130,5 @@ class BoardInsideActivity : AppCompatActivity() {
             }
 
         })
-        imgPath = storageReference.path
     }
 }

@@ -26,7 +26,7 @@ class BoardWriteActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityBoardWriteBinding
 
-    private lateinit var imgUrl : String
+    lateinit var imgUrl : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -119,6 +119,9 @@ class BoardWriteActivity : AppCompatActivity() {
         val baos = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val data = baos.toByteArray()
+        imgUrl = imageView.toString()
+
+
 
         var uploadTask = mountainsRef.putBytes(data)
         uploadTask.addOnFailureListener {
@@ -128,7 +131,7 @@ class BoardWriteActivity : AppCompatActivity() {
             // ...
         }
 
-        imgUrl = mountainsRef.downloadUrl.toString()
+
 
     }
 
@@ -140,7 +143,6 @@ class BoardWriteActivity : AppCompatActivity() {
             binding.DisplayImage.setImageURI(data?.data)
             binding.getImageFromCamera.setImageResource(0)  // 버튼 숨기기
             binding.getImageFromAlbumBtn.setImageResource(0) // 버튼 숨기기
-
         }
 
         else if(resultCode == RESULT_OK && requestCode == REQUEST_IMAGE_CAPTURE){
